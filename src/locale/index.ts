@@ -15,17 +15,17 @@ const getMessageFromModules = (_moduleMap: Record<string, unknown>) => {
   }
   return ret
 }
-const cnMessages = getMessageFromModules(import.meta.glob('./zh-CN/*.json', { eager: true }))
+const koMessages = getMessageFromModules(import.meta.glob('./ko-KR/*.json', { eager: true }))
 const enMessages = getMessageFromModules(import.meta.glob('./en-US/*.json', { eager: true }))
 
 const i18n = createI18n({
   locale: defaultLocale,
-  fallbackLocale: LocaleOptions.cn,
+  fallbackLocale: LocaleOptions.en,
   legacy: false,
   allowComposition: true,
   messages: {
     [LocaleOptions.en]: enMessages,
-    [LocaleOptions.cn]: cnMessages
+    [LocaleOptions.ko]: koMessages
   }
 })
 

@@ -2,6 +2,9 @@ import { appRoutes } from '@/router/routes'
 import { ViewNames } from '@/types/constants'
 import {
   IconCloseCircle,
+  IconNav,
+  IconCalendar,
+  IconCommon,
   IconDashboard,
   IconExclamationCircle,
   IconFile,
@@ -15,6 +18,12 @@ import type { RouteRecordName, RouteRecordRaw } from 'vue-router'
 import usePermission from './permission'
 
 const routeIconMap: Record<RouteRecordName, typeof IconDashboard | undefined> = {
+  [ViewNames.board]: IconNav,
+  [ViewNames.schedule]: IconCalendar,
+  [ViewNames.management]: IconCommon,
+  [ViewNames.service]: IconDashboard,
+  [ViewNames.admin]: IconDashboard,
+  [ViewNames.cs]: IconDashboard,
   [ViewNames.dashboard]: IconDashboard,
   [ViewNames.profile]: IconFile,
   [ViewNames.exception]: IconExclamationCircle,

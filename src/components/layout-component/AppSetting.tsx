@@ -27,7 +27,7 @@ export default defineComponent({
     }
     const handleOK = () => {
       appStore.resetSetting()
-      Message.success('重置成功')
+      Message.success('초기화 완료')
       appStore.settingVisible = false
     }
     const handleChangeThemeColor = (val: any) => {
@@ -115,7 +115,7 @@ export default defineComponent({
                       />
                     ))}
                   </ul>
-                  <span>根据主题颜色生成的 10 个梯度色</span>
+                  <span>그라데이션 테마 색상</span>
 
                   <Divider />
                   <Typography.Title class="!font-semibold" heading={6}>

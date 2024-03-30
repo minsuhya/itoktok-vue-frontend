@@ -30,8 +30,8 @@ export default defineComponent({
     const { loginApp } = useAuth()
     const storageLoginInfo = useStorage(LocalStorageKey.loginFormKey, {
       rememberPassword: true,
-      username: 'admin',
-      password: 'admin'
+      username: 'rupi',
+      password: 'rupi@@1234'
     })
     const loginFormData = ref<LoginData>({
       username: storageLoginInfo.value.username,

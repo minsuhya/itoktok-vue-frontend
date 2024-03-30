@@ -15,7 +15,8 @@ export default defineComponent({
       return {
         legend: {
           left: 'center',
-          data: ['纯文本', '图文类', '视频类'],
+          // 중국어를 한국어로 번역해줘.
+          data: ['텍스트', '그림', '비디오'],
           bottom: 0,
           icon: 'circle',
           itemWidth: 8,
@@ -37,7 +38,7 @@ export default defineComponent({
               left: 'center',
               top: '40%',
               style: {
-                text: '内容量',
+                text: '내용량',
                 textAlign: 'center',
                 fill: isDark ? '#ffffffb3' : '#4E5969',
                 fontSize: 14

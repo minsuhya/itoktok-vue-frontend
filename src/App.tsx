@@ -2,7 +2,7 @@ import { ConfigProvider } from '@arco-design/web-vue'
 import { computed, defineComponent, watch } from 'vue'
 import { RouterView } from 'vue-router'
 
-import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn'
+import koKR from '@arco-design/web-vue/es/locale/lang/ko-kr'
 import enUS from '@arco-design/web-vue/es/locale/lang/en-us'
 import { AppTheme, LocaleOptions } from './types/constants'
 import useLocale from './hooks/locale'
@@ -14,13 +14,13 @@ export default defineComponent({
   setup() {
     const appStore = useAppStore()
     const arcoLocaleMap = {
-      [LocaleOptions.cn]: zhCN,
+      [LocaleOptions.ko]: koKR,
       [LocaleOptions.en]: enUS
     }
     const { currentLocale } = useLocale()
     const arcoLocale = computed(() => {
       switch (currentLocale.value) {
-        case LocaleOptions.cn:
+        case LocaleOptions.ko:
         case LocaleOptions.en:
           return arcoLocaleMap[currentLocale.value]
         default:

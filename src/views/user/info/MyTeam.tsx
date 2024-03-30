@@ -49,7 +49,7 @@ export default defineComponent({
                       )
                     }}
                     title={item.name}
-                    description={`共${item.peopleNumber}人`}
+                    description={`총${item.peopleNumber}명`}
                   ></List.Item.Meta>
                 </List.Item>
               ))}

@@ -59,7 +59,7 @@ export default defineComponent({
                                 </Avatar>
                               ))}
                             </AvatarGroup>
-                            <Typography.Text>等{item.peopleNumber}人</Typography.Text>
+                            <Typography.Text>총{item.peopleNumber}명</Typography.Text>
                           </Space>
                         </Space>
                       </Card>

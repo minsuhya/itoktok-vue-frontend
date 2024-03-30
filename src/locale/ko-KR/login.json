@@ -1,0 +1,19 @@
+{
+   "login.form.title": "로그인 Vue TSX 관리자",
+   "login.form.userName.errMsg": "사용자 이름은 비워둘 수 없습니다.",
+   "login.form.password.errMsg": "비밀번호는 비워둘 수 없습니다.",
+   "login.form.login.errMsg": "로그인 오류입니다. 새로 고친 후 다시 시도하세요.",
+   "login.form.login.success": "환영합니다",
+   "login.form.userName.placeholder": "사용자 이름: 관리자",
+   "login.form.password.placeholder": "비밀번호: 관리자",
+   "login.form.rememberPassword": "비밀번호 기억",
+   "login.form.forgetPassword": "비밀번호를 잊어버렸습니다",
+   "login.form.login": "로그인",
+   "login.form.register": "계정 등록",
+   "login.banner.slogan1": "즉시 사용 가능한 고품질 템플릿",
+   "login.banner.subSlogan1": "가장 일반적인 비즈니스 시나리오를 다루는 풍부한 페이지 템플릿",
+   "login.banner.slogan2": "일반적인 문제에 대한 내장된 솔루션",
+   "login.banner.subSlogan2": "국제화, 라우팅 구성, 상태 관리 모든 것",
+   "login.banner.slogan3": "프로젝트 개발에 TSX를 사용하세요",
+   "login.banner.subSlogan3": "보다 유연한 비즈니스 요구 확장"
+}

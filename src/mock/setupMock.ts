@@ -12,7 +12,7 @@ export const successResponseWrap = (data: unknown) => {
   return {
     data,
     status: 'ok',
-    msg: '请求成功',
+    msg: '처리완료',
     code: ResCode.success
   }
 }

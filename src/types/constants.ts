@@ -1,5 +1,5 @@
 export enum LocaleOptions {
-  cn = 'zh-CN',
+  ko = 'ko-KR',
   en = 'en-US'
 }
 export enum LocalStorageKey {
@@ -23,6 +23,46 @@ export enum ViewNames {
   login = 'login',
   redirect = 'redirect',
   notFound = 'notFound',
+
+
+
+  // =============== DIVIDER ==================
+  board = 'board',
+
+  centerBoard = 'centerBoard',
+  customBoard = 'customBoard',
+
+  // =============== DIVIDER ==================
+  schedule = 'schedule',
+
+  scheduleAll = 'scheduleAll',
+  scheduleMe = 'scheduleMe',
+
+  // =============== DIVIDER ==================
+  management = 'management',
+
+  manageUser = 'manageUser',
+  consulting  = 'consulting',
+
+  // =============== DIVIDER ==================
+  service = 'service',
+
+  serviceMonth = 'serviceMonth',
+  serviceDaily  = 'serviceDaily',
+  serviceVoucher  = 'serviceVoucher',
+
+  // =============== DIVIDER ==================
+  admin = 'admin',
+
+  adminTeacher = 'adminTeacher',
+  adminProgram = 'adminProgram',
+  adminVoucher = 'adminVoucher',
+
+  // =============== DIVIDER ==================
+  cs = 'cs',
+
+  csFaq = 'csFaq',
+  csQna = 'csQna',
 
   // =============== DIVIDER ==================
   dashboard = 'dashboard',

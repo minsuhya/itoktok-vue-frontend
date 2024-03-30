@@ -6,33 +6,34 @@ import setupMock, { successResponseWrap } from '@/mock/setupMock'
 import type { GetParams } from '@/types/global'
 const textList = [
   {
+    // 중국어를 한국어로 번역해줘.
     key: 1,
     clickNumber: '346.3w+',
-    title: '经济日报：财政政策要精准提升…',
+    title: '경제일보: 재정정책은 정확하게 개선되어야 합니다.',
     increases: 35
   },
   {
     key: 2,
     clickNumber: '324.2w+',
-    title: '双12遇冷，消费者厌倦了电商平…',
+    title: '더블 12가 식상해졌다, 소비자들은 전자 상거래 플랫폼을 싫어합니다.',
     increases: 22
   },
   {
     key: 3,
     clickNumber: '318.9w+',
-    title: '致敬坚守战“疫”一线的社区工作…',
+    title: '코로나19 전선에서 굳게 지키고 있는 지역 사회 노동자들에게 경의를 표합니다.',
     increases: 9
   },
   {
     key: 4,
     clickNumber: '257.9w+',
-    title: '普高还是职高？家长们陷入选择…',
+    title: '고등학교인가 직업 고등학교인가? 부모님들은 선택에 빠져들고 있습니다.',
     increases: 17
   },
   {
     key: 5,
     clickNumber: '124.2w+',
-    title: '人民快评：没想到“浓眉大眼”的…',
+    title: '인민일보: "두피가 두꺼운"이라고 생각하지 않았습니다.',
     increases: 37
   }
 ]
@@ -40,31 +41,31 @@ const imageList = [
   {
     key: 1,
     clickNumber: '15.3w+',
-    title: '杨涛接替陆慷出任外交部美大司…',
+    title: '양타오가 루강을 대신하여 외교부 미국 대사관을 맡았습니다.',
     increases: 15
   },
   {
     key: 2,
     clickNumber: '12.2w+',
-    title: '图集：龙卷风袭击美国多州房屋…',
+    title: '사진집: 토네이도가 미국 여러 주를 공격하여 집을 파괴했습니다.',
     increases: 26
   },
   {
     key: 3,
     clickNumber: '18.9w+',
-    title: '52岁大姐贴钱照顾自闭症儿童八…',
+    title: '52세 누나가 돈을 내어 자폐증 아동을 돌보다가 8년간 무급으로 일했습니다.',
     increases: 9
   },
   {
     key: 4,
     clickNumber: '7.9w+',
-    title: '杭州一家三口公园宿营取暖中毒',
+    title: '杭州의 한 가족이 공원에서 캠핑하다가 중독됨',
     increases: 0
   },
   {
     key: 5,
     clickNumber: '5.2w+',
-    title: '派出所副所长威胁市民？警方调…',
+    title: '파출소 부소장이 시민들을 위협했나요? 경찰이 조사합니다.',
     increases: 4
   }
 ]
@@ -72,31 +73,31 @@ const videoList = [
   {
     key: 1,
     clickNumber: '367.6w+',
-    title: '这是今日10点的南京',
+    title: '이것은 오늘 아침 10시의 난징입니다.',
     increases: 5
   },
   {
     key: 2,
     clickNumber: '352.2w+',
-    title: '立陶宛不断挑衅致经济受损民众…',
+    title: '리투아니아는 계속 도발하여 경제적 피해를 입은 국민들...',
     increases: 17
   },
   {
     key: 3,
     clickNumber: '348.9w+',
-    title: '韩国艺人刘在石确诊新冠',
+    title: '한국 연예인 유재석이 코로나19 확진',
     increases: 30
   },
   {
     key: 4,
     clickNumber: '346.3w+',
-    title: '关于北京冬奥会，文在寅表态',
+    title: '평창 동계 올림픽에 대해 문재인이 입장을 밝혔다.',
     increases: 12
   },
   {
     key: 5,
     clickNumber: '271.2w+',
-    title: '95后现役军人荣立一等功',
+    title: '95세 현역 군인이 1등 공로를 얻다',
     increases: 2
   }
 ]
@@ -131,8 +132,8 @@ setupMock({
         'data|4-6': [
           {
             'id|+1': 1,
-            username: '用户7352772',
-            content: '马上就开始了，好激动！',
+            username: '사용자7352772',
+            content: '곧 시작됩니다. 너무 흥분되네요!',
             time: '13:09:12',
             'isCollect|2': true
           }

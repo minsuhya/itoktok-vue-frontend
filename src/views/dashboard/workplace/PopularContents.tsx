@@ -31,21 +31,21 @@ export default defineComponent({
     fetchData(sourceType.value)
     const columns = [
       {
-        title: '排名',
+        title: '번호',
         dataIndex: 'key',
         width: 65
       },
       {
-        title: '内容标题',
+        title: '제목',
         dataIndex: 'title',
         render: ({ record }: { record: TableData }) => <span>{record.title}</span>
       },
       {
-        title: '点击量',
+        title: '금액',
         dataIndex: 'clickNumber'
       },
       {
-        title: '日涨幅',
+        title: '상승률',
         dataIndex: 'increases',
 
         render: ({ record }: { record: TableData }) => {
