@@ -1,5 +1,6 @@
 {
-   "menu.dashboard": "게시판",
+   "menu.dashboard": "대시보드",
+   "menu.board": "게시판",
    "menu.schedule": "일정",
    "menu.management": "이용자 및 상담/평가",
    "menu.service": "재활서비스",
@@ -19,7 +20,7 @@
    "menu.arcoWebsite": "아르코 디자인",
    "menu.faq": "FAQ",
    "navbar.docs": "문서",
-   "navbar.action.locale": "중국어로 전환",
+   "navbar.action.locale": "한국어로 전환",
 
    "messageBox.tab.title.message": "메시지",
    "messageBox.tab.title.notice": "공지",

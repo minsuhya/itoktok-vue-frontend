@@ -6,7 +6,6 @@ import setupMock, { successResponseWrap } from '@/mock/setupMock'
 import type { GetParams } from '@/types/global'
 const textList = [
   {
-    // 중국어를 한국어로 번역해줘.
     key: 1,
     clickNumber: '346.3w+',
     title: '경제일보: 재정정책은 정확하게 개선되어야 합니다.',

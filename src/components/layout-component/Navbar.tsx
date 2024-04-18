@@ -55,7 +55,7 @@ export default defineComponent({
           <Select
             onChange={handleLocaleChange}
             options={[
-              { label: '中文', value: LocaleOptions.cn },
+              { label: '한글', value: LocaleOptions.ko },
               { label: 'English', value: LocaleOptions.en }
             ]}
             triggerProps={{

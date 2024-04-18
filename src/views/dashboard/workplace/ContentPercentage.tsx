@@ -15,7 +15,6 @@ export default defineComponent({
       return {
         legend: {
           left: 'center',
-          // 중국어를 한국어로 번역해줘.
           data: ['텍스트', '그림', '비디오'],
           bottom: 0,
           icon: 'circle',

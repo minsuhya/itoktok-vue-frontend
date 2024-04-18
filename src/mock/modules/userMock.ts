@@ -211,7 +211,7 @@ setupMock({
           status: 0,
           time: '2018-10-22 14:53:12',
           legalPerson: '이**',
-          certificateType: '중국신분증',
+          certificateType: '신분증',
           authenticationNumber: '130************123',
           enterpriseName: '실력있는 기업',
           enterpriseCertificateType: '기업 사업등록증',
@@ -220,7 +220,6 @@ setupMock({
         record: [
           {
             certificationType: 1,
-            // 중국어를 한국어로 번역해줘.
             certificationContent: '기업 실명 인증, 법인 이름: 이**',
             status: 0,
             time: '2021-02-28 10:30:50'
