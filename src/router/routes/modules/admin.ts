@@ -15,7 +15,7 @@ export default {
       path: 'admin-teacher',
       name: ViewNames.adminTeacher,
       // component: () => import('@/views/list/search-table/index'),
-      component: () => import('@/views/teachers/index'),
+      component: () => import('@/views/admin/teachers/index'),
       meta: {
         locale: 'menu.admin.teacher',
         requiresAuth: true,

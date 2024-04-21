@@ -9,5 +9,6 @@ export default defineConfig({
       '@': fileURLToPath(new URL('../src', import.meta.url))
     }
   },
-  base: '/vue-tsx-admin/'
+  // base: '/vue-tsx-admin/'
+  base: '/'
 })
