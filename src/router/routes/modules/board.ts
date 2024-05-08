@@ -13,7 +13,7 @@ export default {
     {
       path: 'center-notice',
       name: ViewNames.centerBoard,
-      component: () => import('@/views/list/search-table/index'),
+      component: () => import('@/views/board/center/index'),
       meta: {
         locale: 'menu.board.centerBoard',
         requiresAuth: true,
@@ -21,9 +21,9 @@ export default {
       }
     },
     {
-      path: 'card',
+      path: 'custom-board',
       name: ViewNames.customBoard,
-      component: () => import('@/views/list/card-list/index'),
+      component: () => import('@/views/board/custom/index'),
       meta: {
         locale: 'menu.board.customBoard',
         requiresAuth: true,

@@ -14,7 +14,7 @@ export default {
     {
       path: 'management-user',
       name: ViewNames.manageUser,
-      component: () => import('@/views/list/search-table/index'),
+      component: () => import('@/views/management/user/index'),
       meta: {
         locale: 'menu.management.manageUser',
         requiresAuth: true,
@@ -24,7 +24,7 @@ export default {
     {
       path: 'management-consulting',
       name: ViewNames.scheduleMe,
-      component: () => import('@/views/list/card-list/index'),
+      component: () => import('@/views/management/consulting/index'),
       meta: {
         locale: 'menu.management.consulting',
         requiresAuth: true,

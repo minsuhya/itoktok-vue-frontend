@@ -1,10 +1,46 @@
 import Mock from 'mockjs'
 import { isLogin } from '@/utils/token'
 import setupMock, { successResponseWrap, failResponseWrap } from '@/mock/setupMock'
-import type { GetParams } from '@/types/global'
 import { ResCode } from '@/types/constants'
+
+import qs from 'query-string'
+import { type GetParams } from '@/types/global'
+const { Random } = Mock
+
+const data = Mock.mock({
+  'list|55': [
+    {
+      'number|+1': 1,
+      'userId|8': /[A-Z][a-z][-][0-9]/,
+      'userPw|8': /[A-Z][a-z][-][0-9]/,
+      'name|12': /[A-Z]/,
+      'gender|1': ['M', 'F'],
+      'birth|10': /[0-9]/,
+      'hp|11': /[0-9]/,
+      'address|10-50': /[A-Z]/,
+      'disability|1': ['Y', 'N'],
+      'status|1': ['Y', 'N'],
+      'firstConsultedTime|10': /[0-9]/,
+      firstConsultedTime: Random.datetime(),
+      updatedTime: Random.datetime()
+    }
+  ]
+})
+
 setupMock({
   setup() {
+
+    // 사용자 정보
+    Mock.mock(new RegExp('/api/user/list'), (params: GetParams) => {
+      const { current = 1, pageSize = 10 } = qs.parseUrl(params.url).query
+      const p = current as number
+      const ps = pageSize as number
+      return successResponseWrap({
+        list: data.list.slice((p - 1) * ps, p * ps),
+        total: 55
+      })
+    })
+
     // 사용자 정보
     Mock.mock(new RegExp('/api/user/info'), () => {
       if (isLogin()) {
