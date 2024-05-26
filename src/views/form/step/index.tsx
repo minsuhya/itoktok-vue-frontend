@@ -109,7 +109,7 @@ export default defineComponent({
                       },
                       {
                         validator: (value: string, callback) => {
-                          if (!/^[\u4e00-\u9fa5a-zA-Z0-9]{1,20}$/g.test(value)) {
+                          if (!/^[a-zA-Z0-9]{1,20}$/g.test(value)) {
                             callback(t('stepForm.basicInfo.name.placeholder'))
                           }
                         }

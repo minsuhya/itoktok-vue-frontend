@@ -1,6 +1,16 @@
 {
-   "menu.board.centerBoard": "센터 공지사항",
-   "menu.board.customBoard": "고객 공지사항",
-   "menu.board.fileBoard": "자료실"
+  "menu.board.centerBoard": "센터 공지사항",
+  "menu.board.customBoard": "고객 공지사항",
+  "menu.board.fileBoard": "자료실",
+  "menu.list.centerBoard": "센터 공지사항",
+  "centerBoard.columns.no": "No",
+  "centerBoard.columns.title": "제목",
+  "centerBoard.columns.contentType": "구분",
+  "centerBoard.columns.creater": "등록자",
+  "centerBoard.columns.createdTime": "게시일",
+  "centerBoard.operations..createdTime": "게시일",
+  "centerBoard.columns.operations": "Operations",
+  "centerBoard.columns.operations.view": "View",
+  "centerBoard.operations.add": "등록",
+  "centerBoard.actions.create": "등록"
 }
-

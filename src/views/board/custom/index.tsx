@@ -179,6 +179,7 @@ export default defineComponent({
             title: item.getTitle(),
             dataIndex: item.dataIndex
           }
+          if (item.render) ret.render = item.render as unknown as TableColumnData['render']
           return ret
         })
     })

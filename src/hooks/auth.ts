@@ -10,7 +10,7 @@ export default function useAuth() {
   const loginApp = async (data: LoginData) => {
     try {
       const res = await login(data)
-      setToken(res.data.token)
+      setToken(res.data.access_token)
     } catch (err) {
       clearToken()
       throw err

@@ -3,6 +3,7 @@ import useLoading from '@/hooks/loading'
 import { type Pagination } from '@/types/global'
 import { exchangeArray } from '@/utils/sort'
 import {
+  Avatar,
   Button,
   Card,
   Checkbox,
@@ -123,37 +124,44 @@ export default defineComponent({
 
     const colList = ref([
       {
-        getTitle: () => t('No'),
+        getTitle: () => t('centerBoard.columns.no'),
         dataIndex: 'number',
         checked: true
       },
       {
-        getTitle: () => t('제목'),
+        getTitle: () => t('centerBoard.columns.title'),
         dataIndex: 'title',
         checked: true
       },
       {
-        getTitle: () => t('구분'),
+        getTitle: () => t('centerBoard.columns.contentType'),
         dataIndex: 'contentType',
         checked: true
       },
       {
-        getTitle: () => t('등록자'),
+        getTitle: () => t('centerBoard.columns.creater'),
         dataIndex: 'creater',
+        renter: (text: string) => text + "monkey" || '-',
         checked: true
       },
       {
-        getTitle: () => t('게시일'),
+        getTitle: () => t('centerBoard.columns.createdTime'),
         dataIndex: 'createdTime',
+        render: (text: string) => new Date(text).toLocaleString(),
         checked: true
       },
       {
-        getTitle: () => t('searchTable.columns.operations'),
+        getTitle: () => t('centerBoard.columns.operations'),
         dataIndex: 'operations',
-        render: () =>
-          checkButtonPermission(['admin']) && (
-            <Link>{t('searchTable.columns.operations.view')}</Link>
-          ),
+        render: ({ record }: { record: BoardRecord }) => {
+          if (checkButtonPermission(['admin'])) {
+            return (
+              <Link>{t('centerBoard.columns.operations.view')}</Link>
+            )
+          } else {
+            return '-'
+          }
+        },
         checked: true
       }
     ])
@@ -179,13 +187,14 @@ export default defineComponent({
             title: item.getTitle(),
             dataIndex: item.dataIndex
           }
+          if (item.render) ret.render = item.render as unknown as TableColumnData['render']
           return ret
         })
     })
 
     return () => (
       <div>
-        <Card class="general-card " title={t('센터 공지사항')}>
+        <Card class="general-card " title={t('menu.board.centerBoard')}>
           <TableSearchForm
             searchLoading={loading.value}
             searchQuery={searchQuery.value}
@@ -200,7 +209,7 @@ export default defineComponent({
                 }}
                 type="primary"
               >
-                {t('등록')}
+                {t('centerBoard.actions.create')}
               </Button>
             </Space>
             <Space size="medium">

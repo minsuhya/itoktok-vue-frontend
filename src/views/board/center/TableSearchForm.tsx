@@ -69,19 +69,19 @@ export default defineComponent({
         >
           <Grid.Row gutter={8}>
             <Grid.Col span={colSpan.value}>
-              <Form.Item field="title" label={t('제목')}>
+              <Form.Item field="title" label={t('centerBoard.columns.title')}>
                 <Input
                   v-model={props.searchQuery.title}
-                  placeholder={t('제목')}
+                  placeholder={t('centerBoard.columns.title')}
                 />
               </Form.Item>
             </Grid.Col>
             <Grid.Col span={colSpan.value}>
-              <Form.Item field="contentType" label={t('구분')}>
+              <Form.Item field="contentType" label={t('centerBoard.columns.contentType')}>
                 <Select
                   v-model={props.searchQuery.contentType}
                   options={contentTypeOptions.value}
-                  placeholder={t('구분')}
+                  placeholder={t('centerBoard.columns.contentType')}
                 />
               </Form.Item>
             </Grid.Col>

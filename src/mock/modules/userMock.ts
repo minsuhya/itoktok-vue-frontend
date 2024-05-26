@@ -68,28 +68,28 @@ setupMock({
     })
 
     // 로그인
-    Mock.mock(new RegExp('/api/user/login'), (params: GetParams) => {
-      const { username, password } = JSON.parse(params.body)
-      if (!username) {
-        return failResponseWrap(null, '로그인 아이디를 입력하세요.', ResCode.error)
-      }
-      if (!password) {
-        return failResponseWrap(null, '비밀번호를 입력하세요.', ResCode.error)
-      }
-      if (username === 'rupi' && password === 'rupi@@1234') {
-        window.localStorage.setItem('data-base-role', 'admin')
-        return successResponseWrap({
-          token: '12345'
-        })
-      }
-      if (username === 'monkey' && password === 'monkey@@1234') {
-        window.localStorage.setItem('data-base-role', 'user')
-        return successResponseWrap({
-          token: '54321'
-        })
-      }
-      return failResponseWrap(null, '사용자정보를 확인하세요.', ResCode.error)
-    })
+    // Mock.mock(new RegExp('/api/user/login'), (params: GetParams) => {
+    //   const { username, password } = JSON.parse(params.body)
+    //   if (!username) {
+    //     return failResponseWrap(null, '로그인 아이디를 입력하세요.', ResCode.error)
+    //   }
+    //   if (!password) {
+    //     return failResponseWrap(null, '비밀번호를 입력하세요.', ResCode.error)
+    //   }
+    //   if (username === 'rupi' && password === 'rupi@@1234') {
+    //     window.localStorage.setItem('data-base-role', 'admin')
+    //     return successResponseWrap({
+    //       token: '12345'
+    //     })
+    //   }
+    //   if (username === 'monkey' && password === 'monkey@@1234') {
+    //     window.localStorage.setItem('data-base-role', 'user')
+    //     return successResponseWrap({
+    //       token: '54321'
+    //     })
+    //   }
+    //   return failResponseWrap(null, '사용자정보를 확인하세요.', ResCode.error)
+    // })
 
     // 로그아웃
     Mock.mock(new RegExp('/api/user/logout'), () => {

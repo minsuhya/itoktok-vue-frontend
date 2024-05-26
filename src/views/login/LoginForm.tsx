@@ -65,6 +65,7 @@ export default defineComponent({
           storageLoginInfo.value.username = rememberPassword ? username : ''
           storageLoginInfo.value.password = rememberPassword ? password : ''
         } catch (err) {
+          alert("monkey error")
           errorMessage.value = (err as Error).message
         } finally {
           setLoading(false)

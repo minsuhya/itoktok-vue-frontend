@@ -24,7 +24,7 @@ export default defineComponent({
         case LocaleOptions.en:
           return arcoLocaleMap[currentLocale.value]
         default:
-          return enUS
+          return koKR
       }
     })
     watch(

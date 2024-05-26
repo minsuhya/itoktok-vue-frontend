@@ -16,7 +16,7 @@ export type Certification = {
   time: string
 }
 
-export type RoleType = '' | '*' | 'admin' | 'user'
+export type RoleType = '' | '*' | 'admin' | 'center' | 'teacher' | 'student'
 
 export type UserInfo = {
   name?: string
@@ -95,7 +95,8 @@ export type LoginData = {
 }
 
 export type LoginRes = {
-  token: string
+  access_token: string
+  token_type: string
 }
 
 export type RoleRes = {

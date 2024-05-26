@@ -19,7 +19,7 @@ export default defineComponent({
 
     const renderMenuContent = () => {
       const traverse = (routeList: any[]) => {
-      console.log(routeList);
+      console.log("routeList:", routeList);
         const list = []
         for (let i = 0; i < routeList.length; i++) {
           const route = routeList[i]
