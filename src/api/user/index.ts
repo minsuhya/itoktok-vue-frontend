@@ -27,11 +27,9 @@ export function getUserInfo() {
 }
 
 export function login(data: LoginData) {
-  return axios.post<LoginRes>(
-    '/api/auth/login', 
-    data, 
-    { headers: {'content-type': 'application/x-www-form-urlencoded' }}
-  )
+  return axios.post<LoginRes>('/api/auth/login', data, {
+    headers: { 'content-type': 'application/x-www-form-urlencoded' }
+  })
 }
 
 export function logout() {

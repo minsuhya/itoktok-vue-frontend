@@ -29,7 +29,6 @@ const data = Mock.mock({
 
 setupMock({
   setup() {
-
     // 사용자 정보
     Mock.mock(new RegExp('/api/user/list'), (params: GetParams) => {
       const { current = 1, pageSize = 10 } = qs.parseUrl(params.url).query
@@ -55,7 +54,8 @@ setupMock({
           organizationName: '개발팀',
           location: 'Gyeonggi-do Gwangju',
           locationName: '경기도 광주',
-          introduction: '루피는 원피스의 주인공이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다.',
+          introduction:
+            '루피는 원피스의 주인공이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다. 루피는 미래의 해적왕이 되기 위해 모험을 떠나는 소년이다.',
           personalWebsite: 'https://www.arco.design',
           phone: '150****0000',
           registrationDate: '2013-05-10 12:10:00',
@@ -168,7 +168,8 @@ setupMock({
         new Array(7).fill(null).map((_item, index) => ({
           id: index,
           title: 'Arco Design System',
-          description: 'Arco Design System is a design language and a set of accessible, high quality design resources. It helps designers and developers work together more efficiently and consistently, building and maintaining a design system.',
+          description:
+            'Arco Design System is a design language and a set of accessible, high quality design resources. It helps designers and developers work together more efficiently and consistently, building and maintaining a design system.',
           avatar: 'https://cdn.jsdelivr.net/gh/manyuemeiquqi/my-image-bed/dist/avatar3.webp'
         }))
       )

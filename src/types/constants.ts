@@ -24,8 +24,6 @@ export enum ViewNames {
   redirect = 'redirect',
   notFound = 'notFound',
 
-
-
   // =============== DIVIDER ==================
   board = 'board',
 
@@ -42,14 +40,14 @@ export enum ViewNames {
   management = 'management',
 
   manageUser = 'manageUser',
-  consulting  = 'consulting',
+  consulting = 'consulting',
 
   // =============== DIVIDER ==================
   service = 'service',
 
   serviceMonth = 'serviceMonth',
-  serviceDaily  = 'serviceDaily',
-  serviceVoucher  = 'serviceVoucher',
+  serviceDaily = 'serviceDaily',
+  serviceVoucher = 'serviceVoucher',
 
   // =============== DIVIDER ==================
   admin = 'admin',
