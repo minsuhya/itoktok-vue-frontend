@@ -1,26 +1,34 @@
-export type TeacherRecord = {
-  id: string
-  number: number
-  name: string
-  important?: boolean
-  contentType: string
-  creater: string
-  content: string
-  expiredTime: string
-  createdTime: string
+export type TeacherRecord {
+  id: number;
+  username: string;
+  full_name: string;
+  email: string;
+  is_active: boolean;
+  role: string;
+  company_number?: string;
+  address?: string;
+  position: string;
+  mobile_number: string;
+  office_number?: string;
+  birthdate?: string;
+  profile_image?: string;
+  teacher_role: string;
+  created_at?: string;
+  updated_at?: string;
+  deleted_at?: string;
 }
 
-export type BoardQuery = {
-  title: string
-  contentType: string
+export type TeacherQuery = {
+  is_active: boolean;
+  full_name: string
 }
 
-export type BoardParams = {
+export type TeacherParams = {
   current: number
   pageSize: number
-} & Partial<BoardRecord>
+} & Partial<TeacherRecord>
 
-export type BoardListRes = {
-  list: BoardRecord[]
+export type TeacherListRes = {
+  list: TeacherRecord[]
   total: number
 }

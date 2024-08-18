@@ -1,9 +1,9 @@
-import { queryPolicyList, type PolicyQuery, type PolicyRecord } from '@/api/list'
+// import { queryPolicyList, type PolicyQuery, type PolicyRecord } from '@/api/list'
+import { queryTeacherList, type TeacherQuery, type TeacherRecord } from '@/api/admin/teacher'
 import useLoading from '@/hooks/loading'
 import { type Pagination } from '@/types/global'
 import { exchangeArray } from '@/utils/sort'
 import {
-  Avatar,
   Badge,
   Button,
   Card,
@@ -93,14 +93,10 @@ export default defineComponent({
     // =============== DIVIDER ==================
     // fetch data logic
 
-    const renderData = ref<PolicyRecord[]>([])
-    const searchQuery = ref<PolicyQuery>({
-      number: '',
-      name: '',
-      contentType: '',
-      filterType: '',
-      createdTime: [],
-      status: ''
+    const renderData = ref<TeacherRecord[]>([])
+    const searchQuery = ref<TeacherQuery>({
+      is_active: true,
+      full_name: ''
     })
 
     const { loading, setLoading } = useLoading()
@@ -113,7 +109,8 @@ export default defineComponent({
           current: paginationConfig.value.current,
           pageSize: paginationConfig.value.pageSize
         }
-        const { data } = await queryPolicyList(params)
+        const { data } = await queryTeacherList(params)
+        console.log('data:', data)
 
         renderData.value = data.list
         paginationConfig.value.total = data.total
@@ -129,77 +126,49 @@ export default defineComponent({
 
     const colList = ref([
       {
-        getTitle: () => t('searchTable.columns.number'),
-        dataIndex: 'number',
+        getTitle: () => '이름',
+        dataIndex: 'full_name',
         checked: true
       },
       {
-        getTitle: () => t('searchTable.columns.name'),
-        dataIndex: 'name',
+        getTitle: () => '직급(호징)',
+        dataIndex: 'position',
         checked: true
       },
       {
-        getTitle: () => t('searchTable.columns.contentType'),
-        dataIndex: 'contentType',
-        render: ({ record }: { record: PolicyRecord }) => {
-          const map: Record<PolicyRecord['contentType'], string> = {
-            img: '//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/581b17753093199839f2e327e726b157.svg~tplv-49unhts6dw-image.image',
-            horizontalVideo:
-              '//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/77721e365eb2ab786c889682cbc721c1.svg~tplv-49unhts6dw-image.image',
-            verticalVideo:
-              '//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/ea8b09190046da0ea7e070d83c5d1731.svg~tplv-49unhts6dw-image.image'
-          }
-          return (
-            <>
-              <Space>
-                <Avatar size={16} shape="square">
-                  <img alt="avatar" src={map[record.contentType]} />
-                </Avatar>
-                {t(`searchTable.form.contentType.${record.contentType}`)}
-              </Space>
-            </>
-          )
-        },
+        getTitle: () => '생년월일',
+        dataIndex: 'birthdate',
         checked: true
       },
       {
-        getTitle: () => t('searchTable.columns.filterType'),
-        dataIndex: 'filterType',
-        render: ({ record }: { record: PolicyRecord }) => (
-          <>{t(`searchTable.form.filterType.${record.filterType}`)}</>
-        ),
+        getTitle: () => '휴대전화번호',
+        dataIndex: 'mobile_number',
         checked: true
       },
       {
-        getTitle: () => t('searchTable.columns.count'),
-        dataIndex: 'count',
+        getTitle: () => '업무전화번호',
+        dataIndex: 'office_number',
         checked: true
       },
       {
-        getTitle: () => t('searchTable.columns.createdTime'),
-        dataIndex: 'createdTime',
+        getTitle: () => '로그인 계정',
+        dataIndex: 'username',
         checked: true
       },
       {
-        getTitle: () => t('searchTable.columns.status'),
-        dataIndex: 'status',
-        render: ({ record }: { record: PolicyRecord }) => {
-          return (
-            <Space>
-              <Badge status={record.status === 'offline' ? 'danger' : 'success'}></Badge>
-              {t(`searchTable.form.status.${record.status}`)}
-            </Space>
-          )
-        },
+        getTitle: () => '계정상태',
+        dataIndex: 'is_active',
         checked: true
       },
       {
-        getTitle: () => t('searchTable.columns.operations'),
+        getTitle: () => '최종로그인일시',
+        dataIndex: 'updated_at',
+        checked: true
+      },
+      {
+        getTitle: () => '작업',
         dataIndex: 'operations',
-        render: () =>
-          checkButtonPermission(['admin']) && (
-            <Link>{t('searchTable.columns.operations.view')}</Link>
-          ),
+        render: () => checkButtonPermission(['admin']) && <Link>View</Link>,
         checked: true
       }
     ])
@@ -249,20 +218,8 @@ export default defineComponent({
               >
                 {t('searchTable.operation.create')}
               </Button>
-              <Upload action="/" showFileList={false}>
-                {{
-                  'upload-button': () => <Button>{t('searchTable.operation.import')}</Button>
-                }}
-              </Upload>
             </Space>
             <Space size="medium">
-              <Button
-                v-slots={{
-                  icon: () => <IconDownload />
-                }}
-              >
-                {t('searchTable.operation.download')}
-              </Button>
               <Dropdown onSelect={handleSelectDensity}>
                 {{
                   default: () => (

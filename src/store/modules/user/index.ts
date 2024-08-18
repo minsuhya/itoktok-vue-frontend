@@ -18,7 +18,7 @@ export default defineStore('userStore', {
     registrationDate: undefined,
     accountId: undefined,
     certification: undefined,
-    role: ''
+    role: 'teacher'
   }),
 
   actions: {

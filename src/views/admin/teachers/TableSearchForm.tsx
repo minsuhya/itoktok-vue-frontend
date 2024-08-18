@@ -1,4 +1,4 @@
-import type { PolicyQuery } from '@/api/list'
+import type { TeacherQuery } from '@/api/admin/teacher'
 import useLocale from '@/hooks/locale'
 import { LocaleOptions } from '@/types/constants'
 import {
@@ -6,7 +6,6 @@ import {
   Form,
   Grid,
   Input,
-  RangePicker,
   Select,
   type FormInstance,
   type SelectOptionData
@@ -21,7 +20,7 @@ export default defineComponent({
   emits: ['onSearch'],
   props: {
     searchQuery: {
-      type: Object as PropType<PolicyQuery>,
+      type: Object as PropType<TeacherQuery>,
       required: true
     },
     searchLoading: {
@@ -35,38 +34,14 @@ export default defineComponent({
 
     const formRef = ref<FormInstance>()
 
-    const contentTypeOptions = computed<SelectOptionData[]>(() => [
-      {
-        label: t('searchTable.form.contentType.img'),
-        value: 'img'
-      },
-      {
-        label: t('searchTable.form.contentType.horizontalVideo'),
-        value: 'horizontalVideo'
-      },
-      {
-        label: t('searchTable.form.contentType.verticalVideo'),
-        value: 'verticalVideo'
-      }
-    ])
-    const filterTypeOptions = computed<SelectOptionData[]>(() => [
-      {
-        label: t('searchTable.form.filterType.artificial'),
-        value: 'artificial'
-      },
-      {
-        label: t('searchTable.form.filterType.rules'),
-        value: 'rules'
-      }
-    ])
     const statusOptions = computed<SelectOptionData[]>(() => [
       {
-        label: t('searchTable.form.status.online'),
-        value: 'online'
+        label: 'Active',
+        value: true
       },
       {
-        label: t('searchTable.form.status.offline'),
-        value: 'offline'
+        label: 'Inactive',
+        value: false
       }
     ])
 
@@ -90,51 +65,16 @@ export default defineComponent({
         >
           <Grid.Row gutter={8}>
             <Grid.Col span={colSpan.value}>
-              <Form.Item field="number" label={t('searchTable.form.number')}>
-                <Input
-                  v-model={props.searchQuery.number}
-                  placeholder={t('searchTable.form.number.placeholder')}
-                />
+              <Form.Item field="full_name" label="검색">
+                <Input v-model={props.searchQuery.full_name} placeholder="검색어를 입력하세요." />
               </Form.Item>
             </Grid.Col>
             <Grid.Col span={colSpan.value}>
-              <Form.Item field="name" label={t('searchTable.form.name')}>
-                <Input
-                  v-model={props.searchQuery.name}
-                  placeholder={t('searchTable.form.name.placeholder')}
-                />
-              </Form.Item>
-            </Grid.Col>
-            <Grid.Col span={colSpan.value}>
-              <Form.Item field="contentType" label={t('searchTable.form.contentType')}>
+              <Form.Item field="status" label="상태">
                 <Select
-                  v-model={props.searchQuery.contentType}
-                  options={contentTypeOptions.value}
-                  placeholder={t('searchTable.form.contentType')}
-                />
-              </Form.Item>
-            </Grid.Col>
-
-            <Grid.Col span={colSpan.value}>
-              <Form.Item field="filterType" label={t('searchTable.form.filterType')}>
-                <Select
-                  v-model={props.searchQuery.filterType}
-                  options={filterTypeOptions.value}
-                  placeholder={t('searchTable.form.selectDefault')}
-                />
-              </Form.Item>
-            </Grid.Col>
-            <Grid.Col span={colSpan.value}>
-              <Form.Item field="createdTime" label={t('searchTable.form.createdTime')}>
-                <RangePicker class="w-full" v-model={props.searchQuery.createdTime} />
-              </Form.Item>
-            </Grid.Col>
-            <Grid.Col span={colSpan.value}>
-              <Form.Item field="status" label={t('searchTable.form.status')}>
-                <Select
-                  v-model={props.searchQuery.status}
+                  v-model={props.searchQuery.is_active}
                   options={statusOptions.value}
-                  placeholder={t('searchTable.form.selectDefault')}
+                  placeholder="상태를 선택하세요."
                 />
               </Form.Item>
             </Grid.Col>
